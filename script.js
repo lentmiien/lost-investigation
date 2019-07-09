@@ -1,6 +1,10 @@
 let data = {
     entries: []
 };
+if (localStorage.hasOwnProperty("lost_data") == true) {
+    data = JSON.parse(localStorage.getItem("lost_data"));
+}
+document.getElementById('total').innerHTML = 'Total entries: ' + data.entries.length;
 
 function AddEntry() {
     // Get input data
@@ -52,8 +56,12 @@ function AddEntry() {
     document.getElementById("where").value = '';
     document.getElementById("enddate").value = '';
     document.getElementById("notes").value = '';
+
+    // Update total entries
+    document.getElementById('total').innerHTML = 'Total entries: ' + data.entries.length;
 }
 
 function Output() {
     document.getElementById("output").value = JSON.stringify(data);
+    localStorage.setItem("lost_data", JSON.stringify(data));
 }
