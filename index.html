@@ -37,6 +37,7 @@
     <b>Where</b><br>
     <select name="where" id="where">
         <option value="notfound">Not Found</option>
+        <option value="indelivery">In Delivery</option>
         <option value="delivered">Delivered</option>
         <option value="returned">Returned</option>
     </select><br>
@@ -46,7 +47,7 @@
     <input type="text" id="enddate"><br>
     <hr>
 
-    <b>Notes</b><br>
+    <b>Notes/Claims</b><br>
     <input type="text" id="notes"><br>
     <hr>
 
@@ -54,7 +55,7 @@
     <hr>
 
     <button onclick="Output()">Save</button><br><br>
-    <input type="text" id="output">
+    <textarea id="output"></textarea>
 
     <script src="script.js"></script>
 </body>

@@ -9,8 +9,8 @@ document.getElementById('total').innerHTML = 'Total entries: ' + data.entries.le
 function AddEntry() {
     // Get input data
     var ordernumber = document.getElementById("ordernumber").value;
-    var country = document.getElementById("country").value;
-    var shippingmethod = document.getElementById("shippingmethod").value;
+    var country = document.getElementById("country").value.toLowerCase();
+    var shippingmethod = document.getElementById("shippingmethod").value.toLowerCase();
     var shippingdate = document.getElementById("shippingdate").value;
     var jpresult = document.getElementById("jpresult").value;
     var where = document.getElementById("where").value;
@@ -62,6 +62,11 @@ function AddEntry() {
 }
 
 function Output() {
-    document.getElementById("output").value = JSON.stringify(data);
     localStorage.setItem("lost_data", JSON.stringify(data));
+
+    // Output as CSV in text area
+    document.getElementById("output").value = 'ordernumber,country,shippingmethod,shippingdate,jpresult,where,enddate,notes\n';
+    for(let i = 0; i < data.entries.length; i++) {
+        document.getElementById("output").value += data.entries[i].ordernumber + ',' + data.entries[i].country + ',' + data.entries[i].shippingmethod + ',' + data.entries[i].shippingdate + ',' + data.entries[i].jpresult + ',' + data.entries[i].where + ',' + data.entries[i].enddate + ',' + data.entries[i].notes + '\n';
+    }
 }
