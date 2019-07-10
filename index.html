@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+	<div id="input">
     <b id="total"></b><br>
     <hr>
     
@@ -56,6 +57,15 @@
 
     <button onclick="Output()">Save</button><br><br>
     <textarea id="output"></textarea>
+    
+    <hr>
+    <button onclick="ShowAnalyze()">Analyze</button>
+    </div>
+    <div id="analyze" style="display:none;">
+    	<h1>Analyzing...</h1>
+    
+    <button onclick="ShowInput()">Input</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

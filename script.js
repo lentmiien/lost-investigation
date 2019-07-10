@@ -70,3 +70,12 @@ function Output() {
         document.getElementById("output").value += data.entries[i].ordernumber + ',' + data.entries[i].country + ',' + data.entries[i].shippingmethod + ',' + data.entries[i].shippingdate + ',' + data.entries[i].jpresult + ',' + data.entries[i].where + ',' + data.entries[i].enddate + ',' + data.entries[i].notes + '\n';
     }
 }
+
+function ShowInput() {
+	document.getElementById('analyze').style.display = 'none';
+	document.getElementById('input').style.display = 'block';
+}
+function ShowAnalyze() {
+	document.getElementById('analyze').style.display = 'block';
+	document.getElementById('input').style.display = 'none';
+}
