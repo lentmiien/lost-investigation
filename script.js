@@ -9,7 +9,7 @@ document.getElementById('total').innerHTML = 'Total entries: ' + data.entries.le
 function AddEntry() {
     // Get input data
     var ordernumber = document.getElementById("ordernumber").value;
-    var country = document.getElementById("country").value.toLowerCase();
+    var country = document.getElementById("country").value.toLowerCase().split(',').join('');
     var shippingmethod = document.getElementById("shippingmethod").value.toLowerCase();
     var shippingdate = document.getElementById("shippingdate").value;
     var jpresult = document.getElementById("jpresult").value;
