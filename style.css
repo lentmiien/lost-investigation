@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    border-bottom: 3px double #ddd;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+.col {
+    border-left: 2px dashed #ddd;
+}

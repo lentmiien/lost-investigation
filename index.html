@@ -4,69 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-	<div id="input">
-    <b id="total"></b><br>
-    <hr>
-    
-    <b>Order Number</b><br>
-    <input type="text" id="ordernumber"><br>
-    <hr>
+    <div id="input">
+        <b id="total"></b><br>
+        <hr>
 
-    <b>Country</b><br>
-    <input type="text" id="country"><br>
-    <hr>
+        <button onclick="NextUndone()">Next unfinished case</button>
 
-    <b>Shipping Method</b><br>
-    <input type="text" id="shippingmethod"><br>
-    <hr>
-
-    <b>Shipping Date</b><br>
-    <input type="text" id="shippingdate"><br>
-    <hr>
-
-    <b>JP Result</b><br>
-    <select name="result" id="jpresult">
-        <option value="notdone">Not Done</option>
-        <option value="found">Found</option>
-        <option value="compensation">Compensation</option>
-    </select><br>
-    <hr>
-
-    <b>Where</b><br>
-    <select name="where" id="where">
-        <option value="notfound">Not Found</option>
-        <option value="indelivery">In Delivery</option>
-        <option value="delivered">Delivered</option>
-        <option value="returned">Returned</option>
-    </select><br>
-    <hr>
-
-    <b>Support End Date</b><br>
-    <input type="text" id="enddate"><br>
-    <hr>
-
-    <b>Notes/Claims</b><br>
-    <input type="text" id="notes"><br>
-    <hr>
-
-    <button onclick="AddEntry()">Add</button><br>
-    <hr>
-
-    <button onclick="Output()">Save</button><br><br>
-    <textarea id="output"></textarea>
-    
-    <hr>
-    <button onclick="ShowAnalyze()">Analyze</button>
+        <hr>
+        
+        <b>Order Number</b><br>
+        <input type="text" id="ordernumber"><br>
+        <hr>
+        
+        <b>Country</b><br>
+        <input type="text" id="country"><br>
+        <hr>
+        
+        <b>Shipping Method</b><br>
+        <input type="text" id="shippingmethod"><br>
+        <hr>
+        
+        <b>Shipping Date</b><br>
+        <input type="text" id="shippingdate"><br>
+        <hr>
+        
+        <b>JP Result</b><br>
+        <select name="result" id="jpresult">
+            <option value="notdone">Not Done</option>
+            <option value="found">Found</option>
+            <option value="compensation">Compensation</option>
+        </select><br>
+        <hr>
+        
+        <b>Where</b><br>
+        <select name="where" id="where">
+            <option value="notfound">Not Found</option>
+            <option value="indelivery">In Delivery</option>
+            <option value="delivered">Delivered</option>
+            <option value="returned">Returned</option>
+        </select><br>
+        <hr>
+        
+        <b>Support End Date</b><br>
+        <input type="text" id="enddate"><br>
+        <hr>
+        
+        <b>Notes/Claims</b><br>
+        <input type="text" id="notes"><br>
+        <hr>
+        
+        <button onclick="AddEntry()">Add</button><br>
+        <hr>
+        
+        <button onclick="Output()">Save</button><br><br>
+        <textarea id="output"></textarea><br>
+        <button onclick="BatchAdd()">Add if not existing</button>
+        
+        <hr>
+        <button onclick="ShowAnalyze()">Analyze</button>
     </div>
     <div id="analyze" style="display:none;">
-    	<h1>Analyzing...</h1>
-    
-    <button onclick="ShowInput()">Input</button>
-    </div>
+        <h1>Analyzing</h1>
+        
+        <hr>
 
+        <input type="checkbox" id="ems" checked> EMS, 
+        <input type="checkbox" id="salsp" checked> SAL SP, 
+        <input type="checkbox" id="airsp" checked> Air SP,
+        <input type="checkbox" id="salparcel" checked> SAL Parcel,
+        <input type="checkbox" id="airparcel" checked> Air Parcel<br><br>
+
+        <button onclick="Analyze()">Update</button>
+        
+        <hr>
+        
+        <div id="dataoutput"></div>
+        ★申告件数（解決件数）<br>
+        ★発見 / 紛失<br>
+        
+        <hr>
+        
+        <button onclick="ShowInput()">Input</button>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
